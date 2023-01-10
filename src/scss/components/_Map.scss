@@ -1,0 +1,35 @@
+.Map {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0.5rem;
+  grid-template-areas:
+    "map detail"
+    "map detail2";
+  margin: 0.5rem 0;
+
+  @media (max-width: 480px) {
+
+    & {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 121px;
+        grid-template-areas: 
+            "map map"
+            "detail detail2"
+        ;
+    }
+  }
+
+  &-wrapper {
+    grid-area: map;
+    height: 245px;
+    border-radius: 1rem;
+    background-color: $clr-black;
+    padding: .7rem;
+  }
+
+  &-item {
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+  }
+}

@@ -1,0 +1,22 @@
+.container {
+    width: 664px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+// flex classes
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    @extend %flex;
+}
+
+.flex-col {
+    @extend %flex;
+    flex-direction: column;
+}

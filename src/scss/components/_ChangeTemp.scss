@@ -1,0 +1,60 @@
+.change-temp-wrapper {
+  position: absolute;
+  padding: 1rem 3rem 1rem 1.9rem;
+  width: 60px;
+  border-radius: 0.5rem;
+  background-color: $clr-black;
+}
+
+.change-temp {
+  position: absolute;
+  width: 100%;
+  max-width: 40px;
+  height: 20px;
+  border-radius: 1rem;
+  border: 1px solid;
+  transition: 0.3s;
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
+
+  &:has(input[type="checkbox"]:checked) {
+    background-color: red;
+    background-color: rgb(151, 150, 150);
+
+    &::after {
+      content: "°F";
+    }
+
+    .thumb {
+      left: calc(50% + 2px);
+    }
+  }
+
+  &::after {
+    content: "°C";
+    position: absolute;
+    right: -20px;
+    font-family: $ff-light;
+    color: $clr-white;
+  }
+
+  .thumb {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+}

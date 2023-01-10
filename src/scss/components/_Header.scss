@@ -1,0 +1,42 @@
+.Header {
+
+    &-location {
+        font-size: $fs-L;
+        letter-spacing: 1.15px;
+        text-transform: capitalize;
+    }
+
+    &-temp {
+        position: relative;
+        font-size: $fs-XXL;
+
+        span {
+            position: absolute;
+            top: 0;
+            font-size: $fs-XL;
+            font-weight: 100;
+        }
+    }
+
+    &-condition {
+        letter-spacing: 1.15px;
+        text-transform: capitalize;
+    }
+
+    &-minMax {
+        margin: .5rem 0;
+        gap: 1rem;
+        font-size: $fs-S;
+
+        .min,
+        .max {
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            top: -2px;
+            right: -6px;
+        }
+    }
+}
