@@ -5,6 +5,7 @@ import Error from "./Error";
 import Header from "./Header";
 import WeatherHourly from "./WeatherHourly";
 import Forecast from "./Forecast";
+import Map from "./Map";
 
 const Weather: React.FC<{ weatherKey: string; coords: string | null}> = ({
   weatherKey,
@@ -25,6 +26,7 @@ const Weather: React.FC<{ weatherKey: string; coords: string | null}> = ({
           <Header data={data} />
           <WeatherHourly data={data} />
           <Forecast data={data} />
+          <Map data={data} coords={coords} />
         </>
       )
     }

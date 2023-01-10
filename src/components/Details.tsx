@@ -3,7 +3,7 @@ import sun from "../images/sun.png";
 import moon from "../images/moon.png";
 
 type TDetails = {
-  className: string;
+  className?: string;
   icon: string;
   title: string;
   primary: string;

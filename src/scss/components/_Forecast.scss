@@ -55,6 +55,10 @@
     gap: 1rem;
     justify-content: flex-end;
 
+    @media (max-width: 340px) {
+      gap: .5rem;
+    }
+
     .min,
     .max {
       position: relative;
