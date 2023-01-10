@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import Error from "./Error";
 
 import Header from "./Header";
+import WeatherHourly from "./WeatherHourly";
 
 const Weather: React.FC<{ weatherKey: string; coords: string | null}> = ({
   weatherKey,
@@ -21,6 +22,7 @@ const Weather: React.FC<{ weatherKey: string; coords: string | null}> = ({
       return (
         <>
           <Header data={data} />
+          <WeatherHourly data={data} />
         </>
       )
     }
