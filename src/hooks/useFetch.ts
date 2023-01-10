@@ -24,7 +24,7 @@ export function useFetch(url: string): TFetch {
       }
       setLoading(false);
     })();
-  }, []);
+  },[]);
 
   return [data, error, loading];
 }

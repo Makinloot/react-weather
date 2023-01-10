@@ -120,7 +120,7 @@ interface ILocation {
 }
 
 // total data
-interface IWeather {
+export interface IWeather {
   current: ICurrent;
   forecast: IForecast;
   location: ILocation;

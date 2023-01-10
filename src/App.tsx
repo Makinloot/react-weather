@@ -14,8 +14,9 @@ function App(): JSX.Element {
   navigator.geolocation.getCurrentPosition(position => {
     const { latitude, longitude } = position.coords;
     const stringifyCoords: string = `${latitude},${longitude}`;
-    setLatlon(stringifyCoords);
+    setLatlon(stringifyCoords)
   })
+
 
   return (
     <Router>
