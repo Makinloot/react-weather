@@ -29,7 +29,7 @@ const WeatherByLoc: React.FC<{ weatherKey: string; coords: string | null }> = ({
 
   if (error) return <Error />;
   else if (loading) return <Loading />;
-  else if (data) {
+  else {
     if (data.current) {
       changeBG(data.current.condition.icon);
     }

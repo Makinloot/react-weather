@@ -4,6 +4,7 @@ import { WEATHER_API_KEY } from "../settings.json";
 
 import Weather from "./components/Weather";
 import WeatherByLoc from "./components/WeatherByLoc";
+import Error from "./components/Error";
 
 
 
@@ -25,8 +26,8 @@ function App(): JSX.Element {
           <div className="App-wrapper">
             <Routes>
               <Route path="/" element={<Weather weatherKey={WEATHER_API_KEY} coords={latlon} />} />
-              <Route path="/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} coords={latlon} />} />
-              <Route path="/*" element={"Oops... incorrect url"} />
+              <Route path="/search/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} coords={latlon} />} />
+              <Route path="*" element={<Error />} />
             </Routes>
           </div>
         </div>

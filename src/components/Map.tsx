@@ -5,7 +5,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { IWeather } from "../api";
 
-const Map: React.FC<{ data: IWeather; coords: string }> = ({
+const Map: React.FC<{ data: IWeather; coords: any }> = ({
   data,
   coords,
 }): JSX.Element | null => {

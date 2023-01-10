@@ -27,9 +27,9 @@ const Weather: React.FC<{ weatherKey: string; coords: string | null }> = ({
       else setSwitchTempValue(true);
     }
 
-    if (error) return <Error />;
+    if (error) console.log('blue')
     else if (loading) return <Loading />;
-    else if (data) {
+    else {
       if (data.current) {
         changeBG(data.current.condition.icon);
       }

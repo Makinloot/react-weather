@@ -1,0 +1,20 @@
+.Error {
+  height: 100vh;
+
+  &-wrapper {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .Search {
+    position: absolute;
+    top: calc(100% + 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $clr-white-secondary;
+    color: $clr-black !important;
+  }
+}

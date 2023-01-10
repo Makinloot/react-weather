@@ -4,7 +4,7 @@ const SearchWeather = () => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <form className='Search flex-row' action={searchValue}>
+    <form className='Search flex-row' action={`/search/${searchValue}`}>
         <div className="Search-input-wrapper">
             <input 
               type="text" 
