@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { IWeather } from "../api";
 
 type TFetch = [
-  data: any,
+  data: IWeather,
   error: boolean,
   loading: boolean
 ]
