@@ -4,8 +4,9 @@ import termoIcon from "../images/termo.png";
 
 import { IWeather } from "../api";
 
-const Forecast: React.FC<{ data: IWeather }> = ({
+const Forecast: React.FC<{ data: IWeather; tempValue: boolean }> = ({
   data,
+  tempValue,
 }): JSX.Element | null => {
   const uniqueKey = () => {
     return Math.random() * Math.random() * Math.random();
@@ -32,8 +33,8 @@ const Forecast: React.FC<{ data: IWeather }> = ({
                   <strong>{currDay}</strong>
                   <img src={icon} alt={text} />
                   <div className="Forecast-minMax flex-row">
-                    <strong className="max">H: {maxtemp_c}</strong>
-                    <strong className="max">L: {mintemp_c}</strong>
+                    <strong className="max">H: {tempValue ? Math.floor(maxtemp_c) : Math.floor(maxtemp_f)}</strong>
+                    <strong className="max">L: {tempValue ? Math.floor(mintemp_c) : Math.floor(mintemp_f)}</strong>
                   </div>
                 </div>
               );
@@ -54,7 +55,8 @@ const Forecast: React.FC<{ data: IWeather }> = ({
               className="Forecast-feelsLike"
               icon={termoIcon}
               title="feels like"
-              primary={`${Math.floor(Number(data.current.feelslike_c))}°`}
+              // primary={`${Math.floor(Number(data.current.feelslike_c))}°`}
+              primary={`${tempValue ? Math.floor(Number(data.current.feelslike_c)) : Math.floor(data.current.feelslike_f)}°`}
               secondary={`wind ${data.current.wind_kph} k/ph`}
             />
           </>

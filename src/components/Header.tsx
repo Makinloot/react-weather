@@ -1,6 +1,6 @@
 import { IWeather } from "../api";
 
-const Header: React.FC<{ data: IWeather }> = ({ data }): JSX.Element | null => {
+const Header: React.FC<{ data: IWeather, tempValue: boolean }> = ({ data, tempValue }): JSX.Element | null => {
   if (data && data.location && data.current && data.forecast) {
     const { name } = data.location;
     const { temp_c, temp_f, condition } = data.current;
@@ -12,17 +12,17 @@ const Header: React.FC<{ data: IWeather }> = ({ data }): JSX.Element | null => {
       <div className="Header-wrapper flex-col">
         <strong className="Header-location">{name}</strong>
         <span className="Header-temp">
-          {temp_c}
+          {tempValue ? Math.floor(temp_c) : Math.floor(temp_f)}
           <span>&deg;</span>
         </span>
         <strong className="Header-condition">{text}</strong>
         <div className="Header-minMax flex-row">
           <strong className="max">
-            H: {maxtemp_c}
+            H: {tempValue ? Math.floor(maxtemp_c) : Math.floor(maxtemp_f)}
             <span>&deg;</span>
           </strong>
           <strong className="min">
-            L: {mintemp_c}
+            L: {tempValue ? Math.floor(mintemp_c) : Math.floor(mintemp_f)}
             <span>&deg;</span>
           </strong>
         </div>

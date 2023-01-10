@@ -16,6 +16,7 @@ import lightSnowNight from "../images/night/light_snow.jpg";
 import mistNight from "../images/night/mist.jpg";
 import thunderyOutbreakNight from "../images/night/thundery_outbreak.jpg";
 
+// change body background image depending on weather condition and daytime
 export default function changeBG(bg: string) {
   const bgIdDay: string = bg.split('/')[5];
   const bgId: number = Number(bg.split('/')[6].split('.')[0])

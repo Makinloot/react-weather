@@ -7,8 +7,9 @@ import { FreeMode, Pagination } from "swiper";
 // types
 import { IWeather } from "../api";
 
-const WeatherHourly: React.FC<{ data: IWeather }> = ({
+const WeatherHourly: React.FC<{ data: IWeather; tempValue: boolean }> = ({
   data,
+  tempValue,
 }): JSX.Element | null => {
   const { width } = document.body.getBoundingClientRect();
   const initSlideView = new Date().getHours();
@@ -42,7 +43,7 @@ const WeatherHourly: React.FC<{ data: IWeather }> = ({
                   </span>
                   <img src={icon} alt={text} className="icon" />
                   <strong className="temp">
-                    {temp_c}
+                    {tempValue ? Math.floor(temp_c) : Math.floor(temp_f)}
                     <span>&deg;</span>
                   </strong>
                 </SwiperSlide>
