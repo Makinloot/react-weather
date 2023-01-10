@@ -1,6 +1,5 @@
-const WeatherByLoc: React.FC<{ weatherKey: string; coords: string | null }> = ({
-  weatherKey,
-  coords,
+const WeatherByLoc: React.FC<{ weatherKey: string; }> = ({
+  weatherKey
 }) => {
   return <div>WeatherByLoc</div>;
 };

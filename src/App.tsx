@@ -20,16 +20,17 @@ function App(): JSX.Element {
   return (
     <Router>
       <div className="App">
-
-        <Routes>
-          <Route path="/" element={<Weather weatherKey={WEATHER_API_KEY} coords={latlon} />} />
-          <Route path="/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} coords={latlon} />} />
-        </Routes>
-
+        <div className="container">
+          <div className="App-wrapper">
+            <Routes>
+              <Route path="/" element={<Weather weatherKey={WEATHER_API_KEY} coords={latlon} />} />
+              <Route path="/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} />} />
+            </Routes>
+          </div>
+        </div>
       </div>
     </Router>
   );
 }
-// const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${lat},${lon}&days=3&aqi=yes`;
 
 export default App;
