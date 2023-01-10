@@ -5,17 +5,19 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper";
 // types
-import { IWeather } from "../api"
+import { IWeather } from "../api";
 
-const WeatherHourly: React.FC<{data: IWeather}> = ({ data }): JSX.Element | null => {
+const WeatherHourly: React.FC<{ data: IWeather }> = ({
+  data,
+}): JSX.Element | null => {
   const { width } = document.body.getBoundingClientRect();
   const initSlideView = new Date().getHours();
 
   const uniqueKey = () => {
     return Math.random() * Math.random() * Math.random();
-  }
+  };
 
-  if(data && data.forecast && data.forecast.forecastday) {
+  if (data && data.forecast && data.forecast.forecastday) {
     const { hour } = data.forecast.forecastday[0];
 
     return (
@@ -29,28 +31,29 @@ const WeatherHourly: React.FC<{data: IWeather}> = ({ data }): JSX.Element | null
           className="mySwiper Swiper"
         >
           {hour &&
-            hour.map(item => {
+            hour.map((item) => {
               const { time, temp_c, temp_f, condition } = item;
               const { icon, text } = condition;
 
               return (
                 <SwiperSlide className="Swiper-item flex-col" key={uniqueKey()}>
-                  <span className="time">{time.split(" ")[1].split(":")[0]}</span>
+                  <span className="time">
+                    {time.split(" ")[1].split(":")[0]}
+                  </span>
                   <img src={icon} alt={text} className="icon" />
                   <strong className="temp">
-                    {temp_c}<span>&deg;</span>
+                    {temp_c}
+                    <span>&deg;</span>
                   </strong>
                 </SwiperSlide>
-              )
-            })
-          }
+              );
+            })}
         </Swiper>
       </>
-    )
+    );
   }
 
+  return null;
+};
 
-  return null
-}
-
-export default WeatherHourly
+export default WeatherHourly;

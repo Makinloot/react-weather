@@ -18,8 +18,8 @@ interface ICurrent {
   air_quality: {}; // temporary unavaliable
   cloud: number;
   condition: TCondition;
-  feelslikde_c: number;
-  feelslikde_f: number;
+  feelslike_c: number;
+  feelslike_f: number;
   gust_kph: number;
   gust_mph: number;
   humidity: number;
