@@ -39,11 +39,11 @@ const WeatherByLoc: React.FC<{ weatherKey: string}> = ({
     return (
       <>
         <ChangeTemp handleTemp={celsiusToF} />
-        <SearchWeather />
         <Header data={data} tempValue={switchTempValue} />
         <WeatherHourly data={data} tempValue={switchTempValue} />
         <Forecast data={data} tempValue={switchTempValue} />
         <Map data={data} coords={coords} />
+        <SearchWeather />
       </>
     );
   }
