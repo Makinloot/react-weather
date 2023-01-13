@@ -28,7 +28,7 @@ const Map: React.FC<{ data: IWeather; coords: any }> = ({
           <MapContainer
             className="Map-item"
             center={[coordTypeNumber.lat, coordTypeNumber.lon]}
-            zoom={14}
+            zoom={10}
             scrollWheelZoom={true}
             zoomControl={false}
           >

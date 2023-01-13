@@ -26,7 +26,7 @@ function App(): JSX.Element {
           <div className="App-wrapper">
             <Routes>
               <Route path="/" element={<Weather weatherKey={WEATHER_API_KEY} coords={latlon} />} />
-              <Route path="/search/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} coords={latlon} />} />
+              <Route path="/search/:location" element={<WeatherByLoc weatherKey={WEATHER_API_KEY} />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </div>

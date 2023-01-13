@@ -12,9 +12,8 @@ import changeBG from "./Background";
 import ChangeTemp from "./ChangeTemp";
 import SearchWeather from "./SearchWeather";
 
-const WeatherByLoc: React.FC<{ weatherKey: string; coords: string | null }> = ({
+const WeatherByLoc: React.FC<{ weatherKey: string}> = ({
   weatherKey,
-  coords,
 }) => {
   const { location } = useParams();
   const [switchTempValue, setSwitchTempValue] = useState<boolean>(true);
@@ -29,10 +28,13 @@ const WeatherByLoc: React.FC<{ weatherKey: string; coords: string | null }> = ({
 
   if (error) return <Error />;
   else if (loading) return <Loading />;
-  else {
+  else if (data.location) {
     if (data.current) {
       changeBG(data.current.condition.icon);
     }
+
+    const { lat, lon } = data.location;
+    const coords = `${lat},${lon}`
 
     return (
       <>
